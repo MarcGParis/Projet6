@@ -126,6 +126,27 @@ li:hover {
 	margin-bottom: 1em;
 }
 
+.filtre {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 3em;
+}
+
+.filtre button {
+	width: 100px;
+	height: 37px;
+	border-radius: 60px;
+	border: 1px solid #1D6154;
+	background: #1D6154;
+}
+
+.filtre button p {
+	color: #FFF;
+	font-family: Syne;
+	font-size: 14px;
+}
+
 .gallery {
 	width: 100%;
 	display: grid;
