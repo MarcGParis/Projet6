@@ -130,21 +130,23 @@ li:hover {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	margin-bottom: 3em;
 }
 
 .filtre button {
-	width: 100px;
-	height: 37px;
+	height: 40px;
+	padding: 10px;
+	margin-left: 10px;
+	margin-bottom: 40px;
 	border-radius: 60px;
 	border: 1px solid #1D6154;
-	background: #1D6154;
+	background-color: #FFF;
 }
 
-.filtre button p {
-	color: #FFF;
+.filtre p {
+	color: #1D6154;
 	font-family: Syne;
-	font-size: 14px;
+	font-size: 16px;
+	text-align: center;
 }
 
 .gallery {
