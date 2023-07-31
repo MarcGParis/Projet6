@@ -26,13 +26,13 @@ fetch("http://localhost:5678/api/categories")
         let buttonElement = document.createElement("button");
         let pElement = document.createElement("p");
         
+        pElement.innerHTML = category.name;
 
         categoryElement.appendChild(buttonElement);
-        pElement.innerHTML = category.name;
         buttonElement.appendChild(pElement);
 
         buttonElement.addEventListener("click", function() {
-            console.log(category.id);
+            // console.log(category.id);
             let works = document.getElementsByClassName("work");
             Array.from(works).forEach(work =>{
                 if (category.id != work.dataset.categoryId) {
@@ -47,7 +47,7 @@ fetch("http://localhost:5678/api/categories")
 
 window.addEventListener("load", function(){
     let tousElement = document.querySelector(".tousElement");
-    console.log(tousElement);
+    // console.log(tousElement);
     tousElement.addEventListener("click", function(){
         let works = document.getElementsByClassName("work");
         Array.from(works).forEach(work =>{
