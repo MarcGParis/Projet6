@@ -216,6 +216,10 @@ footer nav ul {
 	background-color: #FFF;
 }
 
+footer nav ul li:hover {
+	color: #B1663C;
+}
+
 /*** Page login ***/
 .login h2{
 	display: flex;
