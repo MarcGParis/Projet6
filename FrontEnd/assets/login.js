@@ -24,19 +24,18 @@ function connect(email, password) {
                 if (reponse.ok) {
                     return reponse.json()
                 } else {
-                    throw new Error("Mauvais e-mail");
+                    throw new Error("Erreur dans l’identifiant ou le mot de passe");
                 };})
             .then(data => {
                 console.log(data);
                 sessionStorage.setItem("token", data.token)
+                window.location.href = "index.html" // renvoie à la page d'accueil
             })
             .catch(erreur => {
                 console.log(erreur);
                 
-            })
-            
+            })            
     };
-    
 ;
 
 
