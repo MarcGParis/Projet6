@@ -24,7 +24,7 @@ function connect(email, password) {
                 if (reponse.ok) {
                     return reponse.json()
                 } else {
-                    throw new Error("Erreur dans l’identifiant ou le mot de passe");
+                    throw new Error('Erreur dans l’identifiant ou le mot de passe');
                 };})
             .then(data => {
                 console.log(data);
@@ -32,19 +32,11 @@ function connect(email, password) {
                 window.location.href = "index.html" // renvoie à la page d'accueil
             })
             .catch(erreur => {
-                console.log(erreur);
+                document.getElementsByClassName("erreur")[0].innerHTML=erreur.message;
+                document.getElementById("email").style.border="red 1px solid";
+                document.getElementById("password").style.border="red 1px solid";
                 
             })            
     };
 ;
 
-
-
-
-// localStorage.getItem( "userId": 1,
-// "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1MTg3NDkzOSwiZXhwIjoxNjUxOTYxMzM5fQ.JGN1p8YIfR-M-5eQ-Ypy6Ima5cKA4VbfL2xMr2MgHm4")
-
-// {
-//     "userId": 1,
-//     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY5MTM5NjkzNCwiZXhwIjoxNjkxNDgzMzM0fQ.JJ_FUcP1HgynMBbEgQ-BEl0J7dhE5hqiujK1Kv40ZfE"
-// }

@@ -18,7 +18,7 @@
 		<ul>
 			<li><a href="#portfolio">projets</a></li>
 			<li><a href="#contact">contact</a></li>
-			<li><a href="./login.html">login</a></li>
+			<li id="login"><a href="./login.html">login</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -37,7 +37,7 @@
 	</section>
 	<section id="portfolio">
 		<h2>Mes Projets</h2>
-		<a href="#modale1" class="js-modal">Modifier</a>
+		<button class="modal-toggle">Modifier</button>
 		<div class="filtre">
 			<button class="tousElement">
 				<p>
@@ -71,16 +71,16 @@
 		</ul>
 	</nav>
 </footer>
-<aside class="modale1" id="modale1" aria-hidden="true" role="dialog" aria-labelledby="titre1"><!-- style="display:none;" -->
-	<div class="modal-wrapper js-modal-stop">
-		<button class="js-modal-close"><i class="fa-solid fa-xmark"></i></button>
+<div class="modal">
+	<div class="modal-wrapper">
+		<button class="close-modal">x</i></button>
 		<h2 id="titre1">Galerie photo</h2>
 		<div class="button">
 			<button class="add">Ajouter une photo</button>
 			<button class="delete">Supprimer la gallerie</button>
 		</div>
 	</div>
-</aside>
+</div>
 
 </body>
 </html>

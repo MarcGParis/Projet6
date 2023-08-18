@@ -220,27 +220,44 @@ footer nav ul li:hover {
 	color: #B1663C;
 }
 /*** Page modale ***/
-.modale1{
+.modal{
+	display: none;
 	position: fixed;
-	display: flex;
 	align-items: center;
 	justify-content: center;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.08);
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.modal.active {
+	display: block;
 }
 
 .modal-wrapper{
-	overflow: auto;
-	width: 600px;
+	width: 50%;
 	padding: 26px 30px;
 	background-color: #FFFFFF;
+	border-radius: 10px;
+	position: absolute;
+}
+
+.close-modal{
+	padding: 8px 10px;
+	border: none;
+	background-color: #FFFFFF;
+	font-size: 18px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
 }
 
 .modal-wrapper h2{
 	color: #000;
+	background-color: #FFFFFF;
 	text-align: center;
 	font-family: Work Sans;
 	font-size: 26px;
@@ -255,6 +272,7 @@ footer nav ul li:hover {
 	flex-direction: column;
 	align-items: center;
 	margin: 38px 0px 0px 0px;
+	background-color: #FFFFFF;
 }
 
 .button button{
@@ -272,6 +290,7 @@ footer nav ul li:hover {
 	font-style: normal;
 	font-weight: 700;
 	line-height: normal;
+	border-style: none;
 }
 
 .delete{
@@ -297,4 +316,9 @@ footer nav ul li:hover {
 .login p{
 	display: flex;
 	justify-content: center;
+}
+
+.erreur{
+	color: #D65353;
+	margin-bottom: 20px;
 }
