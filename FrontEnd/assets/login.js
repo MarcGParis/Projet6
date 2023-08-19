@@ -27,15 +27,13 @@ function connect(email, password) {
                     throw new Error('Erreur dans l’identifiant ou le mot de passe');
                 };})
             .then(data => {
-                console.log(data);
                 sessionStorage.setItem("token", data.token)
                 window.location.href = "index.html" // renvoie à la page d'accueil
             })
             .catch(erreur => {
                 document.getElementsByClassName("erreur")[0].innerHTML=erreur.message;
                 document.getElementById("email").style.border="red 1px solid";
-                document.getElementById("password").style.border="red 1px solid";
-                
+                document.getElementById("password").style.border="red 1px solid";   
             })            
     };
 ;

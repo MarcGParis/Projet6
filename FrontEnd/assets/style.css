@@ -126,9 +126,32 @@ li a:hover {
 #introduction p {
 	margin-bottom: 0.5em;
 }
-#portfolio h2 {
-	text-align: center;
-	margin-bottom: 1em;
+
+.modal-toggle{
+	font-family: Work Sans;
+	font-size: 14px;
+	border: none;
+	background-color: #FFFEF8;
+	color: #000;
+	cursor: pointer;
+}
+
+#introduction button{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.projets{
+	padding: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.projets button{
+	padding: 0px;
+	margin-left: 4%;
 }
 
 .filtre {
