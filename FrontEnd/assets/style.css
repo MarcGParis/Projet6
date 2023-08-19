@@ -136,12 +136,6 @@ li a:hover {
 	cursor: pointer;
 }
 
-#introduction button{
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-}
-
 .projets{
 	padding: 50px;
 	display: flex;
