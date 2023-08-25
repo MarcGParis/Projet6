@@ -49,11 +49,11 @@ table {
 }
 /** end reset css**/
 body {
-	max-width: 1140px;
-	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
+
+/*** Header ***/
 header {
 	display: flex;
 	flex-wrap: wrap;
@@ -68,6 +68,7 @@ header {
 	background-color: #000;
 	width: 100%;
 	height: 59px;
+	margin: 0px;
 }
 .editionHeader p{
 	color: #FFFFFF;
@@ -122,6 +123,11 @@ nav li a{
 
 li a:hover {
 	color: #B1663C;
+}
+
+/*** Main ***/
+main{
+	margin: 10%;
 }
 #introduction {
 	display: flex;
@@ -246,6 +252,7 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
+/*** Footer ***/
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
