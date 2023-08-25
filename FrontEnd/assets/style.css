@@ -58,7 +58,6 @@ header {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	margin: 50px 0
 }
 
 .editionHeader{
@@ -88,6 +87,7 @@ h1{
 	display: flex;
 	flex-direction: column;
 	font-family: 'Syne';
+	margin: 3% 0% 0% 5%;
 	font-size: 22px;
 	font-weight: 800;
 	color: #B1663C
@@ -105,6 +105,10 @@ h2{
 	font-weight: 700;
 	font-size: 30px;
 	color: #1D6154
+}
+
+nav{
+	margin: 3% 5% 0% 0%;
 }
 nav ul {
 	display: flex;
@@ -129,16 +133,19 @@ li a:hover {
 main{
 	margin: 10%;
 }
+
 #introduction {
 	display: flex;
 	align-items: center;
 }
+
 #introduction figure {
 	flex: 1
 }
+
 #introduction img {
 	display: block;
-	margin: auto;
+	margin-left: 0px;
 	width: 80%;
 }
 
