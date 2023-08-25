@@ -69,6 +69,12 @@ header {
 	height: 59px;
 	margin: 0px;
 }
+.editionHeader .fa-pen-to-square{
+	margin-right: 10px;
+	color: white;
+	background-color: black;
+}
+
 .editionHeader p{
 	display: flex;
 	justify-content: center;
@@ -187,7 +193,9 @@ main{
 	padding: 0px;
 	margin-left: 4%;
 }
-
+.modal-toggle .fa-pen-to-square{
+	margin-right: 10px;
+}
 .filtre {
 	display: flex;
 	flex-direction: row;
