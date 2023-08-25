@@ -62,25 +62,32 @@ header {
 
 .editionHeader{
 	display: none;
-	flex-wrap: wrap;
 	justify-content: center;
+	align-items: center;
 	background-color: #000;
 	width: 100%;
 	height: 59px;
 	margin: 0px;
 }
 .editionHeader p{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 30px;
 	color: #FFFFFF;
-	margin-top: auto;
-	margin-bottom: auto;
+	background-color: #000;
 }
 
 .editionHeader button{
 	width: 216px;
 	height: 38px;
 	border-radius: 60px;
+	cursor: pointer;
+	border: #000;
 	background: #FFF;
 	color: #000;
+	font-family: Work Sans;
+	font-size: 14px;
 }
 
 h1{

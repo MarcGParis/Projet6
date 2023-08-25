@@ -74,7 +74,7 @@ function isAuthenticated() {
 
 function blackHeader() {
   const editionHeader = document.querySelector(".editionHeader");
-  editionHeader.style.display = "block";
+  editionHeader.style.display = "flex";
 }
 
 //Modale
