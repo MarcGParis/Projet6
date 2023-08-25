@@ -325,6 +325,23 @@ footer nav ul li:hover {
 	margin-top: 10px;
 	margin-bottom: 40px;
 }
+.galleryModal{
+	display: grid;
+	justify-content: flex-start;
+	width: 80%;
+	margin: auto;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+}
+
+.galleryModal img{
+	width: 100%;
+	object-position: center;
+	object-fit: cover;
+	height: 16vh;
+}
+
 .button{
 	display: flex;
 	flex-direction: column;
