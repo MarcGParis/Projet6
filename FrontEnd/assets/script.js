@@ -3,6 +3,7 @@ fetch("http://localhost:5678/api/works")
   .then((data) => {
     const galleryElement = document.querySelector(".gallery");
     data.forEach((work) => {
+      displayWorks(work);
       let figcaptionElement = document.createElement("figcaption");
       let figureElement = document.createElement("figure");
       let imageElement = document.createElement("img");
@@ -32,7 +33,6 @@ fetch("http://localhost:5678/api/categories")
       buttonElement.appendChild(pElement);
 
       buttonElement.addEventListener("click", function () {
-        // console.log(category.id);
         let works = document.getElementsByClassName("work");
         Array.from(works).forEach((work) => {
           if (category.id != work.dataset.categoryId) {
@@ -49,7 +49,6 @@ window.addEventListener("load", function () {
   let tousElement = document.querySelector(".tousElement");
   isAuthenticated();
   toggleModal();
-  // console.log(tousElement);
   tousElement.addEventListener("click", function () {
     let works = document.getElementsByClassName("work");
     Array.from(works).forEach((work) => {
@@ -68,8 +67,14 @@ function isAuthenticated() {
       location.reload();
     });
     document.getElementsByClassName("filtre")[0].style.display="none";
-
+    blackHeader();
   }
+}
+
+
+function blackHeader() {
+  const editionHeader = document.querySelector(".editionHeader");
+  editionHeader.style.display = "block";
 }
 
 //Modale
@@ -85,5 +90,17 @@ function toggleModal() {
    modalBtn.addEventListener("click",() =>{
     modalContainer.classList.toggle("active");
    })
-  console.log(modalBtn);
+}
+window.addEventListener("load", function () {
+const modalClose = document.querySelector(".close-modal");
+modalClose.addEventListener("click",() =>{
+  const modalContainer = document.querySelector(".modal")
+  modalContainer.classList.toggle("active");
+})})
+
+function displayWorks(work) {
+  const galleryModal = document.querySelector(".galleryModal")
+  let imageModal = document.createElement("img");
+  imageModal.src = work.imageUrl;
+  galleryModal.appendChild(imageModal);
 }
