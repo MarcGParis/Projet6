@@ -369,6 +369,8 @@ footer nav ul li:hover {
 }
 
 .delete{
+	background-color: #FFFFFF;
+	border: none;
 	color: #D65353;
 	font-family: Syne;
 	font-size: 14px;
