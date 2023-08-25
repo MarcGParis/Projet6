@@ -83,7 +83,7 @@ header {
 	height: 38px;
 	border-radius: 60px;
 	cursor: pointer;
-	border: #000;
+	border: none;
 	background: #FFF;
 	color: #000;
 	font-family: Work Sans;
