@@ -82,16 +82,38 @@
 	</nav>
 </footer>
 <aside class="modal">
-	<div class="modal-wrapper">
+	<!-- <div class="modal-wrapper">
 		<button class="close-modal"><i class="fa-solid fa-x"></i></i></button>
 		<h2 id="titre1">Galerie photo</h2>
 		<div class="galleryModal"></div>
+		<hr class="line">
 		<div class="button">
 			<button class="add">Ajouter une photo</button>
 			<button class="delete">Supprimer la galerie</button>
 		</div>
+	</div> -->
+	<div class="modal2">
+		<div>
+			<button class="arrow-left"><i class="fa-solid fa-arrow-left"></i></button>
+			<button class="close-modal"><i class="fa-solid fa-x"></i></i></button>
+		</div>
+		<h2>Ajout photo</h2>
+		<form method="post">
+			<div class="add-photo">
+				<i class="fa-regular fa-image"></i>
+				<button>+ Ajouter photo</button>
+				<p>jpg, png : 4mo max</p>
+			</div>
+			<label for="title">Titre</label>
+			<input class="title-modal2" type="text" name="title" id="title">
+			<label for="category">Catégorie</label>
+			<input class="category-modal2">
+			<hr class="line">
+			<input type="submit" value="Valider">
+		</form>
 	</div>
 </aside>
+
 
 </body>
 </html>
