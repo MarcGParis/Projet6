@@ -335,18 +335,24 @@ footer nav ul li:hover {
 .galleryModal{
 	display: grid;
 	justify-content: flex-start;
-	width: 80%;
+	width: 90%;
 	margin: auto;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	grid-column-gap: 10px;
 	grid-row-gap: 10px;
 }
 
+.galleryModal i{
+	cursor: pointer;
+	background-color: #000;
+	color: white;
+	position: absolute;
+	padding: 5px;
+	border-radius: 5px;
+}
 .galleryModal img{
 	width: 100%;
-	object-position: center;
-	object-fit: cover;
-	height: 16vh;
+	height: 90%;
 }
 
 .button{

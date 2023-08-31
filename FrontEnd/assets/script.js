@@ -100,7 +100,15 @@ modalClose.addEventListener("click",() =>{
 
 function displayWorks(work) {
   const galleryModal = document.querySelector(".galleryModal")
+  let figureModal = document.createElement("figure");
   let imageModal = document.createElement("img");
   imageModal.src = work.imageUrl;
-  galleryModal.appendChild(imageModal);
+  let trashIcone = document.createElement("i");
+  trashIcone.classList = "fa-solid fa-trash-can";
+  let edit = document.createElement("p");
+  edit.innerText = "éditer";
+  figureModal.appendChild(imageModal)
+  figureModal.appendChild(trashIcone);
+  figureModal.appendChild(edit);
+  galleryModal.appendChild(figureModal);
 }
