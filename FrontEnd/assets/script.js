@@ -107,8 +107,22 @@ function displayWorks(work) {
   trashIcone.classList = "fa-solid fa-trash-can";
   let edit = document.createElement("p");
   edit.innerText = "éditer";
-  figureModal.appendChild(imageModal)
+  figureModal.appendChild(imageModal);
   figureModal.appendChild(trashIcone);
   figureModal.appendChild(edit);
   galleryModal.appendChild(figureModal);
+  imageModal.dataset.workId = work.id;
+  trashIcone.addEventListener("click", function(e) {
+    deleteWork(e.target.previousElementSibling.dataset.workId);
+  }) 
 }
+
+function deleteWork(workId) {
+  let token = sessionStorage.getItem("token");
+  fetch(`http://localhost:5678/api/works/${workId}`, {
+    method: "DELETE",
+    headers: {Authorization: `Bearer ${token}`}
+  })
+  .then((reponse) => console.log(reponse))
+}
+
