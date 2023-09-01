@@ -349,6 +349,8 @@ footer nav ul li:hover {
 	position: absolute;
 	padding: 5px;
 	border-radius: 5px;
+	margin-left: -30px;
+	margin-top: 8px;
 }
 .galleryModal img{
 	width: 100%;
