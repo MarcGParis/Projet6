@@ -123,6 +123,14 @@ function deleteWork(workId) {
     method: "DELETE",
     headers: {Authorization: `Bearer ${token}`}
   })
-  .then((reponse) => console.log(reponse))
-}
+//   .then(reponse => {
+//     if (reponse.ok) {
+//       return reponse.json()
+//     } else {
+//       throw new Error()
+//     }
+//   })
+//   .catch (erreur => {
 
+//   })
+}

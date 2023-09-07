@@ -441,6 +441,7 @@ footer nav ul li:hover {
 	background-color: #E8F1F7;
 	border-radius: 3px;
 	gap: 10px;
+	margin-bottom: 20px;
 }
 
 .fa-image{
