@@ -113,6 +113,7 @@ function displayWorks(work) {
   galleryModal.appendChild(figureModal);
   imageModal.dataset.workId = work.id;
   trashIcone.addEventListener("click", function(e) {
+    e.preventDefault();
     deleteWork(e.target.previousElementSibling.dataset.workId);
   }) 
 }
@@ -123,14 +124,18 @@ function deleteWork(workId) {
     method: "DELETE",
     headers: {Authorization: `Bearer ${token}`}
   })
-//   .then(reponse => {
-//     if (reponse.ok) {
-//       return reponse.json()
-//     } else {
-//       throw new Error()
-//     }
-//   })
-//   .catch (erreur => {
-
-//   })
+  .then(reponse => {
+    if (!reponse.ok) {
+      throw new Error(reponse.statusText)
+    }
+  })
+  .then(() => {
+    const galleryModal = document.querySelector(".galleryModal");
+    const deleteFigure = document.querySelector(`[data-work-id="${workId}"]`);
+    console.log(deleteFigure.parentNode);
+    deleteFigure.parentNode.remove();
+  })
+  .catch (erreur => {
+    console.error(erreur.message);
+  })
 }
