@@ -232,8 +232,8 @@ main{
 
 }
 #contact {
-	width: 50%;
-margin: auto;
+	width: 35%;
+	margin: auto;
 }
 #contact > * {
 	text-align: center;
@@ -257,6 +257,8 @@ margin: auto;
 }
 #contact label {
 	margin: 2em 0 1em 0;
+	display: flex;
+	justify-content: flex-start;
 }
 #contact textarea {
 	border: none;
