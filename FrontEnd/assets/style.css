@@ -389,17 +389,6 @@ footer nav ul li:hover {
 	border-style: none;
 }
 
-.delete{
-	background-color: #FFFFFF;
-	border: none;
-	color: #D65353;
-	font-family: Syne;
-	font-size: 14px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-}
-
 /***Modale 2 ***/
 .modal2{
 	width: 50%;
