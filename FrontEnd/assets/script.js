@@ -12,6 +12,7 @@ fetch("http://localhost:5678/api/works")
       figcaptionElement.innerHTML = work.title;
       figureElement.dataset.categoryId = work.categoryId;
       figureElement.classList.add("work");
+      figureElement.dataset.galleryWorkId = work.id;
 
       figureElement.appendChild(imageElement);
       figureElement.appendChild(figcaptionElement);
@@ -93,10 +94,23 @@ function toggleModal() {
 }
 window.addEventListener("load", function () {
 const modalClose = document.querySelector(".close-modal");
+const modalAddImage = document.querySelector(".add");
+const arrowLeft = document.querySelector(".arrow-left");
+const modalWrapper = document.querySelector(".modal-wrapper");
+  const modal2 = document.querySelector(".modal2");
+arrowLeft.addEventListener("click",() => {
+  modalWrapper.style.display = "block";
+  modal2.style.display = "none";
+})
 modalClose.addEventListener("click",() =>{
   const modalContainer = document.querySelector(".modal")
   modalContainer.classList.toggle("active");
-})})
+})
+modalAddImage.addEventListener("click",() =>{
+  modalWrapper.style.display = "none";
+  modal2.style.display = "block";
+})
+})
 
 function displayWorks(work) {
   const galleryModal = document.querySelector(".galleryModal")
@@ -131,11 +145,19 @@ function deleteWork(workId) {
   })
   .then(() => {
     const galleryModal = document.querySelector(".galleryModal");
-    const deleteFigure = document.querySelector(`[data-work-id="${workId}"]`);
+    const deleteImageModal = document.querySelector(`[data-work-id="${workId}"]`);
+    const deleteFigure = document.querySelector(`[data-gallery-work-id="${workId}"]`);
     console.log(deleteFigure.parentNode);
-    deleteFigure.parentNode.remove();
+    deleteImageModal.parentNode.remove();
+    deleteFigure.remove();
   })
   .catch (erreur => {
     console.error(erreur.message);
   })
 }
+window.addEventListener("load", function() {
+  const fileImput = document.querySelector("#file");
+  fileImput.addEventListener("change", function(event) {
+    console.log(event);
+  })
+})
