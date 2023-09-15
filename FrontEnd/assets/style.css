@@ -447,18 +447,16 @@ footer nav ul li:hover {
 	background-color: #E8F1F6;
 }
 
-.add-photo button{
+.ajouter{
 	width: 173px;
 	height: 36px;
 	border-radius: 50px;
-	border: none;
-	color: #306685;
-	background-color: #CBD6DC;
+	background: #CBD6DC;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 0px;
-	font-size: 14px;
+	color: #306685;
+	cursor: pointer;
 }
 
 .add-photo p{
