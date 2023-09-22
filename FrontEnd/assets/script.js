@@ -178,3 +178,10 @@ fetch("http://localhost:5678/api/categories")
       categoryModal.append(newOption);
     })
 });
+
+window.addEventListener("load", function(){
+  const valider = document.querySelector(".valider");
+  valider.addEventListener("click", function() {
+    console.log(valider);
+  });
+})

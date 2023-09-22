@@ -476,10 +476,21 @@ footer nav ul li:hover {
 }
 
 .line{
-  width: 90%;
-  border: 1px solid #B3B3B3;
+	width: 100%;
+	border: 1px solid #B3B3B3;
 }
 
+.valider{
+	width: 237px;
+	height: 36px;
+	border-radius: 60px;
+	border: none;
+	background: #A7A7A7;
+	color: #FFF;
+	margin: auto;
+	font-family: Syne;
+	font-size: 14px;
+}
 /*** Page login ***/
 .login h2{
 	display: flex;
