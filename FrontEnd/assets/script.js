@@ -155,9 +155,26 @@ function deleteWork(workId) {
     console.error(erreur.message);
   })
 }
+
 window.addEventListener("load", function() {
-  const fileImput = document.querySelector("#file");
-  fileImput.addEventListener("change", function(event) {
-    console.log(event);
+  const fileInput = document.querySelector("#file");
+  console.log(fileInput.files[0]);
+  fileInput.addEventListener("change", function(event) {
+    const previewURL = URL.createObjectURL(fileInput.files[0]);
+    const previewImage = document.querySelector(".previewImage")
+    previewImage.src = previewURL;
   })
 })
+
+
+fetch("http://localhost:5678/api/categories")
+  .then((reponse) => reponse.json())
+  .then((data) => {
+    const categoryModal = document.querySelector(".category-modal2");
+    data.forEach((option) => {
+      let newOption = document.createElement("option");
+      newOption.value = option.id;
+      newOption.innerText = option.name;
+      categoryModal.append(newOption);
+    })
+});
