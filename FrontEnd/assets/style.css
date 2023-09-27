@@ -428,16 +428,6 @@ footer nav ul li:hover {
 	left: 10px;
 	cursor: pointer;
 }
-.photo-added{
-	display: none;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 20px;
-	background-color: #E8F1F7;
-	border-radius: 3px;
-	margin-bottom: 20px;
-}
 
 .add-photo{
 	display: flex;
@@ -477,6 +467,18 @@ footer nav ul li:hover {
 	background-color: #E8F1F7;
 }
 
+.previewImage{
+	display: none;
+	justify-content: center;
+	height: 180px;
+}
+
+.previewSection{
+	display: flex;
+	justify-content: center;
+	background-color:#E8F1F6;
+	margin-bottom: 30px;
+}
 .title-modal2 {
 	height: 50px;
 	margin: 10px 0px 20px;

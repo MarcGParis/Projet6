@@ -161,8 +161,12 @@ window.addEventListener("load", function() {
   console.log(fileInput.files[0]);
   fileInput.addEventListener("change", function(event) {
     const previewURL = URL.createObjectURL(fileInput.files[0]);
-    const previewImage = document.querySelector(".previewImage")
+    const previewImage = document.querySelector(".previewImage");
+    const addPhoto = document.querySelector(".add-photo");
+    const photoAdded = document.querySelector(".previewImage");
     previewImage.src = previewURL;
+    addPhoto.style.display = "none";
+    photoAdded.style.display = "flex";
   })
 })
 
