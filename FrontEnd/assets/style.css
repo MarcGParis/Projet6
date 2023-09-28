@@ -498,7 +498,7 @@ footer nav ul li:hover {
 .category-modal2{
 	margin: 10px 0px 20px;
 	appearance: none;
-	color: rgb(238, 238, 238);
+	border-color: rgb(238, 238, 238);
 	font-family: Work Sans;
 	font-size: 14px;
 	border-radius: 0px;

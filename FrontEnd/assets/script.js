@@ -187,5 +187,8 @@ window.addEventListener("load", function(){
   const valider = document.querySelector(".valider");
   valider.addEventListener("click", function() {
     console.log(valider);
+    const formData = new FormData();
+    formData.append("image", photoAdded);
+    formData.append("category", newOption.value);
   });
 })
