@@ -186,9 +186,22 @@ fetch("http://localhost:5678/api/categories")
 window.addEventListener("load", function(){
   const valider = document.querySelector(".valider");
   valider.addEventListener("click", function() {
-    console.log(valider);
     const formData = new FormData();
-    formData.append("image", photoAdded);
-    formData.append("category", newOption.value);
-  });
-})
+    const photoAdd = document.getElementById("file");
+    const textAdd = document.querySelector(".title-modal2");
+    const categoryAdd = document.querySelector(".category-modal2");
+    formData.append("image", photoAdd.files[0]);
+    formData.append("title", textAdd.value);
+    formData.append("category", categoryAdd.value);
+    let token = sessionStorage.getItem("token");
+    fetch("http://localhost:5678/api/works", {
+      method: "POST",
+      headers: {Authorization: `Bearer ${token}`},
+      body: formData,
+    })
+    .then((reponse)=> {
+      console.log(reponse.ok);
+    })
+    
+});
+});
