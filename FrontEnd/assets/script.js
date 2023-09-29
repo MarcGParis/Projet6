@@ -158,7 +158,6 @@ function deleteWork(workId) {
 
 window.addEventListener("load", function() {
   const fileInput = document.querySelector("#file");
-  console.log(fileInput.files[0]);
   fileInput.addEventListener("change", function(event) {
     const previewURL = URL.createObjectURL(fileInput.files[0]);
     const previewImage = document.querySelector(".previewImage");
@@ -202,6 +201,5 @@ window.addEventListener("load", function(){
     .then((reponse)=> {
       console.log(reponse.ok);
     })
-    
-});
+  });
 });
