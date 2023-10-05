@@ -97,10 +97,14 @@ const modalClose = document.querySelector(".close-modal");
 const modalAddImage = document.querySelector(".add");
 const arrowLeft = document.querySelector(".arrow-left");
 const modalWrapper = document.querySelector(".modal-wrapper");
-  const modal2 = document.querySelector(".modal2");
+const modalImage = document.querySelector(".add-photo");
+const modalImageAdded = document.querySelector(".previewSection");
+const modal2 = document.querySelector(".modal2");
 arrowLeft.addEventListener("click",() => {
   modalWrapper.style.display = "block";
   modal2.style.display = "none";
+  modalImage.style.display = "flex";
+  modalImageAdded.style.display = "none";
 })
 modalClose.addEventListener("click",() =>{
   const modalContainer = document.querySelector(".modal")
@@ -203,3 +207,10 @@ window.addEventListener("load", function(){
     })
   });
 });
+
+window.addEventListener("click", function(){
+
+  addPhoto.style.display="none";
+
+
+})
