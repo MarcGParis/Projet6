@@ -208,6 +208,7 @@ window.addEventListener("load", function(){
   });
 });
 
+// Changement d'image au clic sur l'image modale 2
 window.addEventListener("click", function(){
   const previewImage = document.querySelector(".previewImage");
   const addPhoto = document.querySelector(".add-photo");
