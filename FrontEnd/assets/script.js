@@ -209,8 +209,8 @@ window.addEventListener("load", function(){
 });
 
 window.addEventListener("click", function(){
-
-  addPhoto.style.display="none";
-
-
+  const previewImage = document.querySelector(".previewImage");
+  const addPhoto = document.querySelector(".add-photo");
+  previewImage.style.display = "none";
+  addPhoto.style.display = "flex";
 })
