@@ -97,14 +97,10 @@ const modalClose = document.querySelector(".close-modal");
 const modalAddImage = document.querySelector(".add");
 const arrowLeft = document.querySelector(".arrow-left");
 const modalWrapper = document.querySelector(".modal-wrapper");
-const modalImage = document.querySelector(".add-photo");
-const modalImageAdded = document.querySelector(".previewSection");
 const modal2 = document.querySelector(".modal2");
 arrowLeft.addEventListener("click",() => {
   modalWrapper.style.display = "block";
   modal2.style.display = "none";
-  modalImage.style.display = "flex";
-  modalImageAdded.style.display = "none";
 })
 modalClose.addEventListener("click",() =>{
   const modalContainer = document.querySelector(".modal")
@@ -170,6 +166,7 @@ window.addEventListener("load", function() {
     previewImage.src = previewURL;
     addPhoto.style.display = "none";
     photoAdded.style.display = "flex";
+    console.log(previewImage);
   })
 })
 
@@ -209,9 +206,25 @@ window.addEventListener("load", function(){
 });
 
 // Changement d'image au clic sur l'image modale 2
-window.addEventListener("click", function(){
+function viderForm() {
   const previewImage = document.querySelector(".previewImage");
   const addPhoto = document.querySelector(".add-photo");
-  previewImage.style.display = "none";
+  previewImage.src = "";
   addPhoto.style.display = "flex";
+  previewImage.style.display="none";
+}
+
+window.addEventListener("load", function(){
+  const arrowLeft = document.querySelector(".arrow-left");
+arrowLeft.addEventListener("click", function(){
+  viderForm();
+  console.log(viderForm);
 })
+});
+
+// window.addEventListener("click", function(){
+
+//   const modal2Cross = document.getElementById("cross")
+// const modalContainer = document.querySelector(".modal")
+// modalContainer.style.display = "none";
+// })

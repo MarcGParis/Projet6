@@ -439,6 +439,11 @@ footer nav ul li:hover {
 	border-radius: 3px;
 	gap: 10px;
 	margin-bottom: 20px;
+
+}
+
+.formAddImage{
+	background-color:#E8F1F7;
 }
 
 .fa-image{
@@ -453,11 +458,13 @@ footer nav ul li:hover {
 	width: 173px;
 	height: 36px;
 	border-radius: 50px;
+	border-style: none;
 	background: #CBD6DC;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	color: #306685;
+	font-size: 12px;
 	cursor: pointer;
 }
 #file{
