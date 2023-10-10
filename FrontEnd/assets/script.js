@@ -232,6 +232,13 @@ window.addEventListener("load", function(){
 })
 });
 
+// changement d'image au clic sur l'image 
+window.addEventListener("click", function(){
+  const previewImage = document.querySelector(".previewImage");
+  const addPhoto = document.querySelector(".add-photo");
+  previewImage.style.display = "none";
+  addPhoto.style.display = "flex";
+})
 // window.addEventListener("click", function(){
 
 //   const modal2Cross = document.getElementById("cross")
