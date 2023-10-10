@@ -209,16 +209,26 @@ window.addEventListener("load", function(){
 function viderForm() {
   const previewImage = document.querySelector(".previewImage");
   const addPhoto = document.querySelector(".add-photo");
+  const titreImage = document.querySelector(".title-modal2");
+  const categoryImage = document.querySelector(".category-modal2")
   previewImage.src = "";
+  titreImage.value = "";
+  categoryImage.value = "";
   addPhoto.style.display = "flex";
   previewImage.style.display="none";
 }
 
 window.addEventListener("load", function(){
   const arrowLeft = document.querySelector(".arrow-left");
-arrowLeft.addEventListener("click", function(){
-  viderForm();
-  console.log(viderForm);
+  arrowLeft.addEventListener("click", function(){
+    viderForm();
+})
+});
+
+window.addEventListener("load", function(){
+  const modal2Cross = document.getElementById("cross")
+  modal2Cross.addEventListener("click", function(){
+    viderForm();
 })
 });
 
