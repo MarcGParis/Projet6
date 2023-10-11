@@ -93,11 +93,12 @@ function toggleModal() {
    })
 }
 window.addEventListener("load", function () {
-const modalClose = document.querySelector(".close-modal");
-const modalAddImage = document.querySelector(".add");
-const arrowLeft = document.querySelector(".arrow-left");
-const modalWrapper = document.querySelector(".modal-wrapper");
-const modal2 = document.querySelector(".modal2");
+  const modalClose = document.querySelector(".close-modal");
+  const modalAddImage = document.querySelector(".add");
+  const arrowLeft = document.querySelector(".arrow-left");
+  const modalWrapper = document.querySelector(".modal-wrapper");
+  const modal2 = document.querySelector(".modal2");
+
 arrowLeft.addEventListener("click",() => {
   modalWrapper.style.display = "block";
   modal2.style.display = "none";
@@ -202,6 +203,9 @@ window.addEventListener("load", function(){
     .then((reponse)=> {
       console.log(reponse.ok);
     })
+    .catch (erreur => {
+      console.error(erreur.message);
+    })
   });
 });
 
@@ -225,12 +229,12 @@ window.addEventListener("load", function(){
 })
 });
 
-window.addEventListener("load", function(){
-  const modal2Cross = document.getElementById("cross")
-  modal2Cross.addEventListener("click", function(){
-    viderForm();
-})
-});
+// window.addEventListener("load", function(){
+//   const modal2Cross = document.getElementById("cross")
+//   modal2Cross.addEventListener("click", function(){
+//     viderForm();
+// })
+// });
 
 // changement d'image au clic sur l'image 
 window.addEventListener("click", function(){
@@ -239,9 +243,19 @@ window.addEventListener("click", function(){
   previewImage.style.display = "none";
   addPhoto.style.display = "flex";
 })
+ 
+window.addEventListener("click", function(){
+  const modal2Cross = document.getElementById("cross");
+  const modal = document.querySelector(".modal");
+  modal2Cross.addEventListener("click",() =>{
+    modal.style.display = "none";
+})
+});
 // window.addEventListener("click", function(){
-
-//   const modal2Cross = document.getElementById("cross")
-// const modalContainer = document.querySelector(".modal")
-// modalContainer.style.display = "none";
-// })
+//   const modal2Cross = document.getElementById("cross");
+//   modal2.addEventListener("click", function(){
+//     const modal2 = document.querySelector(".modal2");
+//     const modal = document.querySelector(".modal");
+//     modal2.style.display = "none";
+//   });
+// });
