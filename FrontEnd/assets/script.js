@@ -69,10 +69,15 @@ function isAuthenticated() {
     });
     document.getElementsByClassName("filtre")[0].style.display="none";
     blackHeader();
+    modifier();
+
   }
 }
 
-
+function modifier() {
+  const modifierButton = document.querySelector(".modal-toggle");
+  modifierButton.style.display = "flex";
+}
 function blackHeader() {
   const editionHeader = document.querySelector(".editionHeader");
   editionHeader.style.display = "flex";

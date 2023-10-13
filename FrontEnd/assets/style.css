@@ -190,6 +190,7 @@ main{
 }
 
 .projets button{
+	display: none;
 	padding: 0px;
 	margin-left: 4%;
 }
