@@ -202,9 +202,7 @@ window.addEventListener("load", function(){
     })
     .then((reponse)=> {
       console.log(reponse.ok);
-    })
-    .catch (erreur => {
-      console.error(erreur.message);
+      throw new Error('Ajoutez un titre et une catégorie');
     })
   });
 });
@@ -236,26 +234,19 @@ window.addEventListener("load", function(){
 // })
 // });
 
-// changement d'image au clic sur l'image 
-window.addEventListener("click", function(){
-  const previewImage = document.querySelector(".previewImage");
-  const addPhoto = document.querySelector(".add-photo");
-  previewImage.style.display = "none";
-  addPhoto.style.display = "flex";
-})
+// // changement d'image au clic sur l'image (ne fonctionne pas correctement)
+// window.addEventListener("click", function(){
+//   const previewImage = document.querySelector(".previewImage");
+//   const addPhoto = document.querySelector(".add-photo");
+//   previewImage.style.display = "none";
+//   addPhoto.style.display = "flex";
+// })
  
+// Ne permet pas de rouvrir la modale
 window.addEventListener("click", function(){
   const modal2Cross = document.getElementById("cross");
   const modal = document.querySelector(".modal");
-  modal2Cross.addEventListener("click",() =>{
+  modal2Cross.addEventListener("click", function(){
     modal.style.display = "none";
 })
 });
-// window.addEventListener("click", function(){
-//   const modal2Cross = document.getElementById("cross");
-//   modal2.addEventListener("click", function(){
-//     const modal2 = document.querySelector(".modal2");
-//     const modal = document.querySelector(".modal");
-//     modal2.style.display = "none";
-//   });
-// });
