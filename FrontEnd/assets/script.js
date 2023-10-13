@@ -100,13 +100,13 @@ window.addEventListener("load", function () {
   const modal2 = document.querySelector(".modal2");
 
 arrowLeft.addEventListener("click",() => {
-  modalWrapper.style.display = "block";
-  modal2.style.display = "none";
+  displayModalWrapper();
 })
 modalClose.addEventListener("click",() =>{
   const modalContainer = document.querySelector(".modal")
   modalContainer.classList.toggle("active");
 })
+
 modalAddImage.addEventListener("click",() =>{
   modalWrapper.style.display = "none";
   modal2.style.display = "block";
@@ -203,7 +203,11 @@ window.addEventListener("load", function(){
     .then((reponse)=> {
       console.log(reponse.ok);
       throw new Error('Ajoutez un titre et une catégorie');
+      
     })
+    .catch(erreur => {
+      console.log(erreur);
+    });
   });
 });
 
@@ -227,26 +231,36 @@ window.addEventListener("load", function(){
 })
 });
 
-// window.addEventListener("load", function(){
-//   const modal2Cross = document.getElementById("cross")
-//   modal2Cross.addEventListener("click", function(){
-//     viderForm();
-// })
-// });
-
-// // changement d'image au clic sur l'image (ne fonctionne pas correctement)
-// window.addEventListener("click", function(){
-//   const previewImage = document.querySelector(".previewImage");
-//   const addPhoto = document.querySelector(".add-photo");
-//   previewImage.style.display = "none";
-//   addPhoto.style.display = "flex";
-// })
- 
-// Ne permet pas de rouvrir la modale
-window.addEventListener("click", function(){
-  const modal2Cross = document.getElementById("cross");
-  const modal = document.querySelector(".modal");
+window.addEventListener("load", function(){
+  const modal2Cross = document.getElementById("cross")
   modal2Cross.addEventListener("click", function(){
-    modal.style.display = "none";
+    viderForm();
 })
 });
+
+window.addEventListener("load", function(){
+const previewImage = document.querySelector(".previewImage");
+previewImage.addEventListener("click", function(){
+  const addPhoto = document.querySelector(".add-photo");
+  previewImage.style.display = "none";
+  addPhoto.style.display = "flex";
+});
+});
+
+
+window.addEventListener("load", function(){
+  const modal2Cross = document.getElementById("cross");
+modal2Cross.addEventListener("click", function(){
+
+  const modal = document.querySelector(".modal");
+    modal.classList.toggle("active");
+    displayModalWrapper();
+})
+});
+
+function displayModalWrapper() {
+  const modalWrapper = document.querySelector(".modal-wrapper");
+  const modal2 = document.querySelector(".modal2");
+  modalWrapper.style.display = "block";
+  modal2.style.display = "none";
+};
