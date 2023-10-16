@@ -211,13 +211,16 @@ main{
 	border-radius: 60px;
 	border: 1px solid #1D6154;
 	background-color: #FFF;
-}
-
-.filtre p {
 	color: #1D6154;
 	font-family: Syne;
 	font-size: 16px;
 	text-align: center;
+	cursor: pointer;
+}
+
+.filtre button:hover{
+	color: #FFFFFF;
+	background-color: #1D6154;
 }
 
 .gallery {

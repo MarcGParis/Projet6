@@ -26,12 +26,10 @@ fetch("http://localhost:5678/api/categories")
     const categoryElement = document.querySelector(".filtre");
     data.forEach((category) => {
       let buttonElement = document.createElement("button");
-      let pElement = document.createElement("p");
 
-      pElement.innerHTML = category.name;
+      buttonElement.innerHTML = category.name;
 
       categoryElement.appendChild(buttonElement);
-      buttonElement.appendChild(pElement);
 
       buttonElement.addEventListener("click", function () {
         let works = document.getElementsByClassName("work");
