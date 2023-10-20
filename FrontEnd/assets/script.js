@@ -32,6 +32,12 @@ fetch("http://localhost:5678/api/categories")
       categoryElement.appendChild(buttonElement);
 
       buttonElement.addEventListener("click", function () {
+      const buttonElementVert = categoryElement.getElementsByTagName("button");
+      Array.from(buttonElementVert).forEach((button) => {
+        button.classList.remove("btnactive");
+      });
+      
+        buttonElement.classList.toggle("btnactive");
         let works = document.getElementsByClassName("work");
         Array.from(works).forEach((work) => {
           if (category.id != work.dataset.categoryId) {
@@ -40,7 +46,19 @@ fetch("http://localhost:5678/api/categories")
             work.style.display = "block";
           }
         });
+
       });
+      const buttonTous = document.querySelector(".tousElement");
+      buttonTous.addEventListener("click", function () {
+      
+        const buttonElementVert = categoryElement.getElementsByTagName("button");
+        Array.from(buttonElementVert).forEach((button) => {
+          button.classList.remove("btnactive");
+          
+        });
+        buttonTous.classList.toggle("btnactive");
+      });
+      
     });
   });
 
@@ -213,6 +231,22 @@ window.addEventListener("load", function(){
     });
   });
 });
+
+// function checkForm() {
+//   const photoAdd = document.getElementById("file");
+//   const textAdd = document.querySelector(".title-modal2");
+//   const categoryAdd = document.querySelector(".category-modal2");
+
+//   formData.append("image", photoAdd.files[0]);
+//   formData.append("title", textAdd.value);
+//   formData.append("category", categoryAdd.value);
+
+//   if (textAdd.valueem) {
+    
+//   } else {
+    
+//   }
+// }
 
 // Changement d'image au clic sur l'image modale 2
 function viderForm() {
