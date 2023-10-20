@@ -232,21 +232,45 @@ window.addEventListener("load", function(){
   });
 });
 
-// function checkForm() {
-//   const photoAdd = document.getElementById("file");
-//   const textAdd = document.querySelector(".title-modal2");
-//   const categoryAdd = document.querySelector(".category-modal2");
+function checkForm() {
+  const photoAdd = document.getElementById("file");
+  const textAdd = document.querySelector(".title-modal2");
+  const categoryAdd = document.querySelector(".category-modal2");
+  const validerGris = document.querySelector(".valider");
+  const validerVert = document.querySelector(".validerVert")
 
-//   formData.append("image", photoAdd.files[0]);
-//   formData.append("title", textAdd.value);
-//   formData.append("category", categoryAdd.value);
+  photoAdd.append("image", photoAdd.files[0]);
+  textAdd.append("title", textAdd.value);
+  categoryAdd.append("category", categoryAdd.value);
 
-//   if (textAdd.valueem) {
-    
-//   } else {
-    
-//   }
-// }
+  function boutonVert() {
+    validerVert.style.display = "flex";
+    validerGris.style.display = "none";
+  }
+
+  function boutonGris() {
+    validerVert.style.display = "none";
+    validerGris.style.display = "flex";
+  }
+
+  if (photoAdd.files && textAdd.value && categoryAdd.value) {
+    boutonVert();
+  } else {
+    if (photoAdd.files !== "") {
+      boutonGris();
+    } else {
+      if (textAdd.value !== "") {
+        boutonGris();
+      } else {
+        if (categoryAdd.value !== "") {
+          boutonGris();
+        }
+      }
+    }
+  }
+ 
+            
+}
 
 // Changement d'image au clic sur l'image modale 2
 function viderForm() {
