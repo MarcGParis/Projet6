@@ -16,9 +16,10 @@ fetch("http://localhost:5678/api/works")
 
       figureElement.appendChild(imageElement);
       figureElement.appendChild(figcaptionElement);
-      galleryElement.appendChild(figureElement);
+      galleryElement.appendChild(figureElement);      
     });
   });
+  
 
 fetch("http://localhost:5678/api/categories")
   .then((reponse) => reponse.json())
@@ -224,53 +225,56 @@ window.addEventListener("load", function(){
     .then((reponse)=> {
       console.log(reponse.ok);
       throw new Error('Ajoutez un titre et une catégorie');
-      
     })
+    // .then((reponse)=>{
+    //   displayModalWrapper()
+    // })
     .catch(erreur => {
       console.log(erreur);
-    });
+    })
+
   });
 });
+
+window.addEventListener("load", function(){
+  const validerGris = document.querySelector(".valider");
+  const photoAdd = document.getElementById("file");
+  const textAdd = document.querySelector(".title-modal2");
+  const categoryAdd = document.querySelector(".category-modal2");
+  photoAdd.addEventListener("change",function(){
+    checkForm();
+  });
+  textAdd.addEventListener("change",function(){
+    checkForm();
+  });
+  categoryAdd.addEventListener("change",function(){
+    checkForm();
+  });
+});
+
+function boutonGris() {
+  const validerVert = document.querySelector(".valider");
+  validerVert.classList.remove("validerVert");
+}
+
+function boutonVert() {
+  const validerGris = document.querySelector(".valider");
+  validerGris.classList.add("validerVert");
+}
 
 function checkForm() {
   const photoAdd = document.getElementById("file");
   const textAdd = document.querySelector(".title-modal2");
   const categoryAdd = document.querySelector(".category-modal2");
   const validerGris = document.querySelector(".valider");
-  const validerVert = document.querySelector(".validerVert")
-
-  photoAdd.append("image", photoAdd.files[0]);
-  textAdd.append("title", textAdd.value);
-  categoryAdd.append("category", categoryAdd.value);
-
-  function boutonVert() {
-    validerVert.style.display = "flex";
-    validerGris.style.display = "none";
-  }
-
-  function boutonGris() {
-    validerVert.style.display = "none";
-    validerGris.style.display = "flex";
-  }
-
-  if (photoAdd.files && textAdd.value && categoryAdd.value) {
-    boutonVert();
-  } else {
-    if (photoAdd.files !== "") {
-      boutonGris();
-    } else {
-      if (textAdd.value !== "") {
-        boutonGris();
-      } else {
-        if (categoryAdd.value !== "") {
-          boutonGris();
-        }
-      }
-    }
-  }
  
-            
+  if (photoAdd.files.length >0 && textAdd.value !== "" && categoryAdd.value !== "") {
+    boutonVert();
+    } else {
+    boutonGris();
+  }          
 }
+
 
 // Changement d'image au clic sur l'image modale 2
 function viderForm() {

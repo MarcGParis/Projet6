@@ -531,6 +531,7 @@ footer nav ul li:hover {
 }
 
 .valider{
+	display: block;
 	width: 237px;
 	height: 36px;
 	border-radius: 60px;
@@ -542,7 +543,7 @@ footer nav ul li:hover {
 	font-size: 14px;
 }
 
-.valider{
+.validerVert{
 	width: 237px;
 	height: 36px;
 	border-radius: 60px;
