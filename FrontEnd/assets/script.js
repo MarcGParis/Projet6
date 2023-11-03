@@ -2,6 +2,7 @@ fetch("http://localhost:5678/api/works")
   .then((reponse) => reponse.json())
   .then((data) => {
     const galleryElement = document.querySelector(".gallery");
+    
     data.forEach((work) => {
       displayWorks(work);
       let figcaptionElement = document.createElement("figcaption");
@@ -224,20 +225,39 @@ window.addEventListener("load", function(){
     })
     .then((reponse)=> {
       console.log(reponse.ok);
+      displayModalWrapper();
+      const galleryModal = document.querySelector(".galleryModal");
+      let figureModal = document.createElement("figure");
+      let imageModal = document.createElement("img");
+      let trashIcone = document.createElement("i");
+      trashIcone.classList = "fa-solid fa-trash-can";
+      let edit = document.createElement("p");
+      edit.innerText = "éditer";
+      imageModal.src = URL.createObjectURL(photoAdd.files[0]);
+      console.log(URL.createObjectURL(photoAdd.files[0]));
+      figureModal.appendChild(imageModal);
+      galleryModal.appendChild(figureModal);
+      figureModal.appendChild(trashIcone);
+      figureModal.appendChild(edit);
+      let image = document.createElement("img");
+      let figcaptionElement = document.createElement("figcaption");
+      let figureElement = document.createElement("figure");
+      const galleryElement = document.querySelector(".gallery");
+      image.src = URL.createObjectURL(photoAdd.files[0]);
+      figureElement.appendChild(image);
+      figcaptionElement.innerHTML = textAdd.value;
+      figureElement.appendChild(figcaptionElement);
+      galleryElement.appendChild(figureElement);
+      
       throw new Error('Ajoutez un titre et une catégorie');
     })
-    // .then((reponse)=>{
-    //   displayModalWrapper()
-    // })
     .catch(erreur => {
       console.log(erreur);
     })
-
   });
 });
 
 window.addEventListener("load", function(){
-  const validerGris = document.querySelector(".valider");
   const photoAdd = document.getElementById("file");
   const textAdd = document.querySelector(".title-modal2");
   const categoryAdd = document.querySelector(".category-modal2");
@@ -266,12 +286,13 @@ function checkForm() {
   const photoAdd = document.getElementById("file");
   const textAdd = document.querySelector(".title-modal2");
   const categoryAdd = document.querySelector(".category-modal2");
-  const validerGris = document.querySelector(".valider");
  
   if (photoAdd.files.length >0 && textAdd.value !== "" && categoryAdd.value !== "") {
     boutonVert();
+    document.querySelector(".valider").disabled = false;
     } else {
     boutonGris();
+    document.querySelector(".valider").disabled = true;
   }          
 }
 
